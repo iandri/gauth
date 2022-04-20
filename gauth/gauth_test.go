@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/creachadair/otp/otpauth"
-	"github.com/pcarrier/gauth/gauth"
+	"github.com/iandri/gauth/gauth"
 )
 
 func TestCodes(t *testing.T) {
