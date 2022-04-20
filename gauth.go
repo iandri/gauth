@@ -20,6 +20,10 @@ var (
 	jsOutput = flag.Bool("j", false, "json output")
 )
 
+func init() {
+	log.SetFlags(log.LstdFlags | log.Lshortfile)
+}
+
 type Output struct {
 	Account  string `json:"account"`
 	Prev     string `json:"prev"`
