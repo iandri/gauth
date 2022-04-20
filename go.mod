@@ -1,4 +1,4 @@
-module github.com/pcarrier/gauth
+module github.com/iandri/gauth
 
 go 1.12
 
