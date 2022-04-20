@@ -66,12 +66,11 @@ func main() {
 		out = append(out, output)
 	}
 
-	js, err := json.Marshal(out)
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	if *jsOutput {
+		js, err := json.Marshal(out)
+		if err != nil {
+			log.Fatal(err)
+		}
 		fmt.Println(string(js))
 		return
 	}
