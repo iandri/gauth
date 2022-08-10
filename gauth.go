@@ -18,6 +18,7 @@ import (
 
 var (
 	jsOutput = flag.Bool("j", false, "json output")
+	withPass = flag.String("p", "", "password")
 )
 
 func init() {
@@ -70,6 +71,17 @@ func main() {
 		out = append(out, output)
 	}
 
+	if *withPass != "" {
+		var full string
+		if progress <= 20 {
+			full = fmt.Sprintf("%s%s", *withPass, out[0].Curr)
+		} else {
+			full = fmt.Sprintf("%s%s", *withPass, out[0].Next)
+		}
+
+		fmt.Println(full)
+		return
+	}
 	if *jsOutput {
 		js, err := json.Marshal(out)
 		if err != nil {
