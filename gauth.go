@@ -80,7 +80,7 @@ func main() {
 		}
 		if *jsOutput {
 			js, _ := json.Marshal(full)
-			fmt.Print(string(js))
+			fmt.Println(string(js))
 			return
 		}
 		fmt.Println(full)
