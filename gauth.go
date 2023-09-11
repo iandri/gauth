@@ -78,10 +78,15 @@ func main() {
 		} else {
 			full = fmt.Sprintf("%s%s", *withPass, out[0].Next)
 		}
-
+		if *jsOutput {
+			js, _ := json.Marshal(full)
+			fmt.Print(string(js))
+			return
+		}
 		fmt.Println(full)
 		return
 	}
+
 	if *jsOutput {
 		js, err := json.Marshal(out)
 		if err != nil {
